@@ -80,8 +80,8 @@ function eventClick(element, binding, pluginOptions) {
   // Header: auth value prefix (Bearer) (only via options)
   if (
     typeof pluginOptions === "object" &&
-    pluginOptions.headerAuthValuePrefix &&
-    pluginOptions.headerAuthValuePrefix !== ""
+    pluginOptions.headerAuthValuePrefix !== undefined &&
+    pluginOptions.headerAuthValuePrefix !== null
   ) {
     options.headerAuthValuePrefix = pluginOptions.headerAuthValuePrefix
   }
