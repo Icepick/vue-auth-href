@@ -206,8 +206,8 @@ function eventClick(element, binding, pluginOptions) {
       const contentDisposition = response.headers["content-disposition"]
       let fileName = href.substring(href.lastIndexOf("/") + 1)
       if (contentDisposition) {
-        const fileNameMatch = contentDisposition.match(/filename="(.+)"/)
-        if (fileNameMatch.length === 2) fileName = fileNameMatch[1]
+        const fileNameMatch = contentDisposition.match(/filename="?(.+)"?/)
+        if (fileNameMatch && fileNameMatch.length === 2) fileName = fileNameMatch[1]
       }
       link.setAttribute("download", fileName)
       document.body.appendChild(link)
